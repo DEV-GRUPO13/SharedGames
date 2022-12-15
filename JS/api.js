@@ -43,7 +43,9 @@ function click_home() {
                 console.log(jogo);
 
                 telaPrincipal.insertAdjacentHTML("beforeend", `<div id="tela_prin">
+                                                            <a href="${jogo.game_url}"> 
                                                             <img alt="${jogo.title}" src="${jogo.thumbnail}">
+                                                            </a>
                                                             <h1>${jogo.title}</h1>
                                                             </div>
             
@@ -72,7 +74,9 @@ function click_pc() {
                 console.log(jogo);
 
                 telaPrincipal.insertAdjacentHTML("beforeend", `<div id="tela_prin">
+                                                             <a href="${jogo.game_url}">
                                                             <img alt="${jogo.title}" src="${jogo.thumbnail}">
+                                                            </a>
                                                             <h1>${jogo.title}</h1>
                                                             </div>
             
@@ -100,7 +104,9 @@ function click_browser() {
             PRIMEIROS_DEZ[0].forEach(jogo => {
                 console.log(jogo);
                 telaPrincipal.insertAdjacentHTML("beforeend", `<div>
+                                                                <a href="${jogo.game_url}">
                                                                 <img alt="${jogo.title}" src="${jogo.thumbnail}">
+                                                                </a>
                                                                 <h1>${jogo.title}</h1>
                                                                 </div>
                 
@@ -128,7 +134,9 @@ function click_all() {
             PRIMEIROS_DEZ[0].forEach(jogo => {
                 console.log(jogo);
                 telaPrincipal.insertAdjacentHTML("beforeend", `<div>
+                                                                    <a href="${jogo.game_url}">
                                                                     <img alt="${jogo.title}" src="${jogo.thumbnail}">
+                                                                    </a>
                                                                     <h1>${jogo.title}</h1>
                                                                     </div>
                     
@@ -157,7 +165,9 @@ function click_pvp() {
             PRIMEIROS_DEZ[0].forEach(jogo => {
                 console.log(jogo);
                 telaPrincipal.insertAdjacentHTML("beforeend", `<div>
+                                                                        <a href="${jogo.game_url}">
                                                                         <img alt="${jogo.title}" src="${jogo.thumbnail}">
+                                                                        </a>
                                                                         <h1>${jogo.title}</h1>
                                                                         </div>
                         
@@ -184,8 +194,10 @@ function click_mmo() {
             telaPrincipal.innerHTML="";
             PRIMEIROS_DEZ[0].forEach(jogo => {
                 console.log(jogo);
-                telaPrincipal.insertAdjacentHTML("beforeend", `<div>
+                telaPrincipal.insertAdjacentHTML("beforeend", `<div>   
+                                                                        <a href="${jogo.game_url}">
                                                                         <img alt="${jogo.title}" src="${jogo.thumbnail}">
+                                                                        </a>
                                                                         <h1>${jogo.title}</h1>
                                                                         </div>
                         
@@ -212,8 +224,10 @@ function click_survival() {
             telaPrincipal.innerHTML="";
             PRIMEIROS_DEZ[0].forEach(jogo => {
                 console.log(jogo);
-                telaPrincipal.insertAdjacentHTML("beforeend", `<div>
+                telaPrincipal.insertAdjacentHTML("beforeend", `<div>   
+                                                                        <a href="${jogo.game_url}">
                                                                         <img alt="${jogo.title}" src="${jogo.thumbnail}">
+                                                                        </a>
                                                                         <h1>${jogo.title}</h1>
                                                                         </div>
                         
@@ -241,7 +255,9 @@ function click_card() {
             PRIMEIROS_DEZ[0].forEach(jogo => {
                 console.log(jogo);
                 telaPrincipal.insertAdjacentHTML("beforeend", `<div>
+                                                                        <a href="${jogo.game_url}">
                                                                         <img alt="${jogo.title}" src="${jogo.thumbnail}">
+                                                                        </a>
                                                                         <h1>${jogo.title}</h1>
                                                                         </div>
                         
@@ -269,7 +285,9 @@ function click_luta() {
             PRIMEIROS_DEZ[0].forEach(jogo => {
                 console.log(jogo);
                 telaPrincipal.insertAdjacentHTML("beforeend", `<div>
+                                                                        <a href="${jogo.game_url}">
                                                                         <img alt="${jogo.title}" src="${jogo.thumbnail}">
+                                                                        </a>
                                                                         <h1>${jogo.title}</h1>
                                                                         </div>
                         
@@ -296,7 +314,9 @@ function click_tiro() {
             PRIMEIROS_DEZ[0].forEach(jogo => {
                 console.log(jogo);
                 telaPrincipal.insertAdjacentHTML("beforeend", `<div>
+                                                                        <a href="${jogo.game_url}">
                                                                         <img alt="${jogo.title}" src="${jogo.thumbnail}">
+                                                                        </a>
                                                                         <h1>${jogo.title}</h1>
                                                                         </div>
                         
@@ -324,7 +344,9 @@ function click_militar() {
             PRIMEIROS_DEZ[0].forEach(jogo => {
                 console.log(jogo);
                 telaPrincipal.insertAdjacentHTML("beforeend", `<div>
+                                                                        <a href="${jogo.game_url}">
                                                                         <img alt="${jogo.title}" src="${jogo.thumbnail}">
+                                                                        </a>
                                                                         <h1>${jogo.title}</h1>
                                                                         </div>
                         
@@ -352,7 +374,9 @@ function click_acao() {
             PRIMEIROS_DEZ[0].forEach(jogo => {
                 console.log(jogo);
                 telaPrincipal.insertAdjacentHTML("beforeend", `<div>
+                                                                        <a href="${jogo.game_url}">
                                                                         <img alt="${jogo.title}" src="${jogo.thumbnail}">
+                                                                        </a>
                                                                         <h1>${jogo.title}</h1>
                                                                         </div>
                         
