@@ -122,13 +122,14 @@ p {
     display: flex;
     background-color: #242323;
     flex-direction: column;
-    height: 100%;
+    height: 100vh;
     width: 3.5vw;
     box-shadow: 1.3vw 0 0 #C079BB;
     border-left: 1vw solid #242323;
     overflow: hidden;
     transition: 0.5s;
 }
+
 
 .navegacao:hover {
     width: 17vw;
@@ -142,7 +143,7 @@ p {
     display: flex;
     width: 100%;
     padding-left: 3%;
-    padding-top: 45px;
+    padding-top: 37px;
 
 }
 
@@ -178,11 +179,4 @@ p {
     position: relative;
     padding-left: 10px;
     white-space: nowrap;
-}
-
-footer {
-    width: 100%;
-    height: 8vh;
-    background-color: #4e254d;
-
 }
