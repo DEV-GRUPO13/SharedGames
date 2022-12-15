@@ -105,8 +105,8 @@ p {
 }
 
 .navegacao ul li.ativa {
-    padding-top: 2px;
-    padding-left: 5px;
+    padding-top: 5px;
+    padding-left: 3px;
     background-color: #C079BB;
 }
 
@@ -141,7 +141,7 @@ p {
 .navegacao ul {
     display: flex;
     width: 100%;
-    padding-left: 5%;
+    padding-left: 3%;
     padding-top: 45px;
 
 }

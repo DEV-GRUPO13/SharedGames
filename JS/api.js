@@ -42,13 +42,13 @@ function click_home() {
             PRIMEIROS_DEZ[0].forEach(jogo => {
                 console.log(jogo);
 
-                telaPrincipal.insertAdjacentHTML("beforeend", `<div id="tela_prin">
-                                                            <a href="${jogo.game_url}"> 
-                                                            <img alt="${jogo.title}" src="${jogo.thumbnail}">
-                                                            </a>
-                                                            <h1>${jogo.title}</h1>
-                                                            </div>
-            
+                telaPrincipal.insertAdjacentHTML("beforeend", `<div class="jogos">
+                                                                <a href=${jogo.game_url}>
+                                                                <img class="imagem" alt="${jogo.title}" src="${jogo.thumbnail}">
+                                                                <p class="titulo">${jogo.title}</p>
+                                                                </a>
+                                                                </div>
+
             
             
         `)
@@ -254,12 +254,12 @@ function click_card() {
             telaPrincipal.innerHTML = "";
             PRIMEIROS_DEZ[0].forEach(jogo => {
                 console.log(jogo);
-                telaPrincipal.insertAdjacentHTML("beforeend", `<div class="jogos">
-                                                                        <a href="${jogo.game_url}">
-                                                                        <img alt="${jogo.title}" src="${jogo.thumbnail}">
-                                                                        <p>${jogo.title}</p>
-                                                                        </a>
-                                                                        </div>
+                telaPrincipal.insertAdjacentHTML("beforeend", `<div class="jogos">   
+                                                    <a href="${jogo.game_url}">
+                                                    <img class="imagem" alt="${jogo.title}" src="${jogo.thumbnail}">
+                                                    <p class="titulos">${jogo.title}</p>
+                                                    </a>
+                                                    </div>
                         
                         
                         
