@@ -18,6 +18,7 @@ botao_home.value;
 let botao_acao = document.getElementById("acao");
 botao_acao.value;
 
+let Primeiro_jogo = [];
 let PRIMEIROS_DEZ = [];
 let TODOS_JOGOS = [];
 
@@ -29,16 +30,62 @@ const options = {
         'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
     }
 };
+telaPrincipal.innerHTML = "";
+fetch('https://free-to-play-games-database.p.rapidapi.com/api/games', options)
+    .then(response => response.json())
+    .then(dadosServidor => {
+        TODOS_JOGOS.push(dadosServidor);
+        PRIMEIROS_DEZ.push(TODOS_JOGOS[0].slice(1, 7));
+        Primeiro_jogo.push(TODOS_JOGOS[0].slice(0, 1));
+
+
+
+        Primeiro_jogo[0].forEach(jogo => {
+            console.log(Primeiro_jogo)
+            telaPrincipal.insertAdjacentHTML("beforeend", ` <a href=${jogo.game_url}>
+                                                            <img class="banner" src="${jogo.thumbnail}">
+                                                            </a>`)
+        });
+
+
+
+        PRIMEIROS_DEZ[0].forEach(jogo => {
+            console.log(jogo);
+
+            telaPrincipal.insertAdjacentHTML("beforeend", `<div class="jogos">
+                                                        <a href=${jogo.game_url}>
+                                                        <img class="imagem" alt="${jogo.title}" src="${jogo.thumbnail}">
+                                                        <p class="titulo">${jogo.title}</p>
+                                                        </a>
+                                                        </div>
+                                                  
+
+    
+    
+`)
+
+        });
+
+    })
+    .catch(err => console.error(err));
 function click_home() {
     TODOS_JOGOS = [];
     PRIMEIROS_DEZ = [];
+
     fetch('https://free-to-play-games-database.p.rapidapi.com/api/games', options)
         .then(response => response.json())
         .then(dadosServidor => {
+
             TODOS_JOGOS.push(dadosServidor);
             PRIMEIROS_DEZ.push(TODOS_JOGOS[0].slice(0, 6));
-
             telaPrincipal.innerHTML = "";
+
+            Primeiro_jogo[0].forEach(jogo => {
+                console.log(Primeiro_jogo)
+                telaPrincipal.insertAdjacentHTML("beforeend", ` <a href=${jogo.game_url}>
+                                                                <img class="banner" src="${jogo.thumbnail}">
+                                                                </a>`)
+            });
             PRIMEIROS_DEZ[0].forEach(jogo => {
                 console.log(jogo);
 
@@ -48,6 +95,7 @@ function click_home() {
                                                                 <p class="titulo">${jogo.title}</p>
                                                                 </a>
                                                                 </div>
+                                                          
 
             
             
@@ -63,13 +111,20 @@ botao_home.addEventListener("click", click_home)
 function click_pc() {
     TODOS_JOGOS = [];
     PRIMEIROS_DEZ = [];
+    telaPrincipal.innerHTML = "";
     fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?platform=pc', options)
         .then(response => response.json())
         .then(dadosServidor => {
             TODOS_JOGOS.push(dadosServidor);
             PRIMEIROS_DEZ.push(TODOS_JOGOS[0].slice(0, 6));
-
             telaPrincipal.innerHTML = "";
+            Primeiro_jogo[0].forEach(jogo => {
+                console.log(Primeiro_jogo)
+                telaPrincipal.insertAdjacentHTML("beforeend", ` <a href=${jogo.game_url}>
+                                                                <img class="banner" src="${jogo.thumbnail}">
+                                                                </a>`)
+            });
+
             PRIMEIROS_DEZ[0].forEach(jogo => {
                 console.log(jogo);
 
@@ -94,13 +149,20 @@ botao_pc.addEventListener("click", click_pc)
 function click_browser() {
     TODOS_JOGOS = [];
     PRIMEIROS_DEZ = [];
+    telaPrincipal.innerHTML = "";
     fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?platform=browser', options)
         .then(response => response.json())
         .then(dadosServidor => {
             TODOS_JOGOS.push(dadosServidor);
             PRIMEIROS_DEZ.push(TODOS_JOGOS[0].slice(0, 6));
-
             telaPrincipal.innerHTML = "";
+            Primeiro_jogo[0].forEach(jogo => {
+                console.log(Primeiro_jogo)
+                telaPrincipal.insertAdjacentHTML("beforeend", ` <a href=${jogo.game_url}>
+                                                                <img class="banner" src="${jogo.thumbnail}">
+                                                                </a>`)
+            });
+
             PRIMEIROS_DEZ[0].forEach(jogo => {
                 console.log(jogo);
                 telaPrincipal.insertAdjacentHTML("beforeend", `<div class="jogos">
@@ -129,8 +191,14 @@ function click_all() {
         .then(dadosServidor => {
             TODOS_JOGOS.push(dadosServidor);
             PRIMEIROS_DEZ.push(TODOS_JOGOS[0].slice(0, 6));
-
             telaPrincipal.innerHTML = "";
+            Primeiro_jogo[0].forEach(jogo => {
+                console.log(Primeiro_jogo)
+                telaPrincipal.insertAdjacentHTML("beforeend", ` <a href=${jogo.game_url}>
+                                                                <img class="banner" src="${jogo.thumbnail}">
+                                                                </a>`)
+            });
+
             PRIMEIROS_DEZ[0].forEach(jogo => {
                 console.log(jogo);
                 telaPrincipal.insertAdjacentHTML("beforeend", `<div class="jogos">
@@ -160,8 +228,14 @@ function click_pvp() {
         .then(dadosServidor => {
             TODOS_JOGOS.push(dadosServidor);
             PRIMEIROS_DEZ.push(TODOS_JOGOS[0].slice(0, 6));
-
             telaPrincipal.innerHTML = "";
+            Primeiro_jogo[0].forEach(jogo => {
+                console.log(Primeiro_jogo)
+                telaPrincipal.insertAdjacentHTML("beforeend", ` <a href=${jogo.game_url}>
+                                                                <img class="banner" src="${jogo.thumbnail}">
+                                                                </a>`)
+            });
+
             PRIMEIROS_DEZ[0].forEach(jogo => {
                 console.log(jogo);
                 telaPrincipal.insertAdjacentHTML("beforeend", `<div class="jogo">
@@ -190,8 +264,14 @@ function click_mmo() {
         .then(dadosServidor => {
             TODOS_JOGOS.push(dadosServidor);
             PRIMEIROS_DEZ.push(TODOS_JOGOS[0].slice(0, 6));
-
             telaPrincipal.innerHTML = "";
+            Primeiro_jogo[0].forEach(jogo => {
+                console.log(Primeiro_jogo)
+                telaPrincipal.insertAdjacentHTML("beforeend", ` <a href=${jogo.game_url}>
+                                                                <img class="banner" src="${jogo.thumbnail}">
+                                                                </a>`)
+            });
+
             PRIMEIROS_DEZ[0].forEach(jogo => {
                 console.log(jogo);
                 telaPrincipal.insertAdjacentHTML("beforeend", `<div class="jogos">   
@@ -220,8 +300,14 @@ function click_survival() {
         .then(dadosServidor => {
             TODOS_JOGOS.push(dadosServidor);
             PRIMEIROS_DEZ.push(TODOS_JOGOS[0].slice(0, 6));
-
             telaPrincipal.innerHTML = "";
+            Primeiro_jogo[0].forEach(jogo => {
+                console.log(Primeiro_jogo)
+                telaPrincipal.insertAdjacentHTML("beforeend", ` <a href=${jogo.game_url}>
+                                                                <img class="banner" src="${jogo.thumbnail}">
+                                                                </a>`)
+            });
+
             PRIMEIROS_DEZ[0].forEach(jogo => {
                 console.log(jogo);
                 telaPrincipal.insertAdjacentHTML("beforeend", `<div class="jogos">   
@@ -250,8 +336,14 @@ function click_card() {
         .then(dadosServidor => {
             TODOS_JOGOS.push(dadosServidor);
             PRIMEIROS_DEZ.push(TODOS_JOGOS[0].slice(0, 6));
-
             telaPrincipal.innerHTML = "";
+            Primeiro_jogo[0].forEach(jogo => {
+                console.log(Primeiro_jogo)
+                telaPrincipal.insertAdjacentHTML("beforeend", ` <a href=${jogo.game_url}>
+                                                                <img class="banner" src="${jogo.thumbnail}">
+                                                                </a>`)
+            });
+
             PRIMEIROS_DEZ[0].forEach(jogo => {
                 console.log(jogo);
                 telaPrincipal.insertAdjacentHTML("beforeend", `<div class="jogos">   
@@ -280,8 +372,14 @@ function click_luta() {
         .then(dadosServidor => {
             TODOS_JOGOS.push(dadosServidor);
             PRIMEIROS_DEZ.push(TODOS_JOGOS[0].slice(0, 6));
-
             telaPrincipal.innerHTML = "";
+            Primeiro_jogo[0].forEach(jogo => {
+                console.log(Primeiro_jogo)
+                telaPrincipal.insertAdjacentHTML("beforeend", ` <a href=${jogo.game_url}>
+                                                                <img class="banner" src="${jogo.thumbnail}">
+                                                                </a>`)
+            });
+
             PRIMEIROS_DEZ[0].forEach(jogo => {
                 console.log(jogo);
                 telaPrincipal.insertAdjacentHTML("beforeend", `<div class="jogos">
@@ -312,8 +410,14 @@ function click_tiro() {
         .then(dadosServidor => {
             TODOS_JOGOS.push(dadosServidor);
             PRIMEIROS_DEZ.push(TODOS_JOGOS[0].slice(0, 6));
-
             telaPrincipal.innerHTML = "";
+            Primeiro_jogo[0].forEach(jogo => {
+                console.log(Primeiro_jogo)
+                telaPrincipal.insertAdjacentHTML("beforeend", ` <a href=${jogo.game_url}>
+                                                                <img class="banner" src="${jogo.thumbnail}">
+                                                                </a>`)
+            });
+
             PRIMEIROS_DEZ[0].forEach(jogo => {
                 console.log(jogo);
                 telaPrincipal.insertAdjacentHTML("beforeend", `<div class="jogos">
@@ -342,8 +446,14 @@ function click_militar() {
         .then(dadosServidor => {
             TODOS_JOGOS.push(dadosServidor);
             PRIMEIROS_DEZ.push(TODOS_JOGOS[0].slice(0, 6));
-
             telaPrincipal.innerHTML = "";
+            Primeiro_jogo[0].forEach(jogo => {
+                console.log(Primeiro_jogo)
+                telaPrincipal.insertAdjacentHTML("beforeend", ` <a href=${jogo.game_url}>
+                                                                <img class="banner" src="${jogo.thumbnail}">
+                                                                </a>`)
+            });
+
             PRIMEIROS_DEZ[0].forEach(jogo => {
                 console.log(jogo);
                 telaPrincipal.insertAdjacentHTML("beforeend", `<div class="jogos">
@@ -373,8 +483,14 @@ function click_acao() {
         .then(dadosServidor => {
             TODOS_JOGOS.push(dadosServidor);
             PRIMEIROS_DEZ.push(TODOS_JOGOS[0].slice(0, 6));
-
             telaPrincipal.innerHTML = "";
+            Primeiro_jogo[0].forEach(jogo => {
+                console.log(Primeiro_jogo)
+                telaPrincipal.insertAdjacentHTML("beforeend", ` <a href=${jogo.game_url}>
+                                                                <img class="banner" src="${jogo.thumbnail}">
+                                                                </a>`)
+            });
+
             PRIMEIROS_DEZ[0].forEach(jogo => {
                 console.log(jogo);
                 telaPrincipal.insertAdjacentHTML("beforeend", `<div class="jogos">
